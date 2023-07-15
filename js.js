@@ -23,6 +23,12 @@ function addTask() {
 
         input.value = '';
         clearbtn.removeAttribute('disabled');
+
+        const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
+        for (let i = 0; i < allCheckboxes.length; i++) {
+            localStorage.setItem(`task${i+1}`, allCheckboxes[i].value);
+        }
+
     }
 }
 
@@ -41,8 +47,7 @@ function deleteTasks() {
     parent.innerHTML = '';
     emptyTask.classList.remove('displaynone');
     clearbtn.disabled = true;
+    window.localStorage.clear();
 }
 
 clearbtn.addEventListener('click', deleteTasks);
-
-liinputvalue
