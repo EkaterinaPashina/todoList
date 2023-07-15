@@ -22,14 +22,10 @@ function addTask() {
         liTask.appendChild(label);
 
         input.value = '';
+
         clearbtn.removeAttribute('disabled');
-
-        const allCheckboxes = document.querySelectorAll('input[type=checkbox]');
-        for (let i = 0; i < allCheckboxes.length; i++) {
-            localStorage.setItem(`task${i+1}`, allCheckboxes[i].value);
-        }
-
     }
+    saveInfo();
 }
 
 button.addEventListener('click', addTask);
@@ -37,9 +33,10 @@ button.addEventListener('click', addTask);
 parent.addEventListener('click', function (task) {
     if (task.target.tagName === 'LI') {
         task.target.classList.toggle('checked');
-
+        saveInfo();
     } else if (task.target.tagName === 'SPAN') {
         task.target.parentElement.remove();
+        saveInfo();
     }
 });
 
@@ -51,3 +48,17 @@ function deleteTasks() {
 }
 
 clearbtn.addEventListener('click', deleteTasks);
+
+
+function saveInfo() {
+    localStorage.setItem('tasks', parent.innerHTML);
+}
+
+function showTasks() {
+    parent.innerHTML = localStorage.getItem('tasks');
+    if (parent.innerHTML !== '') {
+        clearbtn.disabled = false;
+        emptyTask.classList.add('displaynone');
+    }
+}
+showTasks();
