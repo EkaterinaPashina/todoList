@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Ysabeau+SC&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div class="container">
+        <div class="form">
+            <img src="assets/images/to-do-list.png" alt="to-do-icon" class="icon">
+            <h1>Добавить задачу</h1>
+            <div class="inputs">
+                <input type="text" class="task" id="task" name="task">
+                <input type="button" class="button" id="buttonadd" value="Добавить">
+            </div>
+        </div>
+        <div class="taskList">
+            <h2>Список задач</h2>
+            <div class="tasks" id="tasks">
+                <ul id="ul"></ul>
+            </div>
+            <p class="emptyTask">Нет задач</p>
+            <p class="count"></p>
+            <div class="clear">
+                <input type="button" class="button clearButton" id="buttonclear" value="Очистить список задач" disabled>
+            </div>
+        </div>
+    </div>
+    <script src="js.js"></script>
+</body>
+
+</html>

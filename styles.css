@@ -1,0 +1,132 @@
+body {
+    font-family: 'Ysabeau SC', sans-serif;
+}
+
+.icon {
+    width: 15%;
+    padding-left: 2rem;
+}
+
+.container {
+    margin: auto;
+    width: 50%;
+    border: #f79235 2px solid;
+    border-radius: 20px;
+    box-shadow: 12px 12px 2px 1px #fde09b8c;
+}
+
+h1 {
+    padding-left: 2rem;
+    color: #6f5575;
+    font-size: 1.8rem;
+}
+
+.task {
+    margin-left: 2rem;
+    margin-bottom: 2rem;
+    border: 2px #f79235 solid;
+    border-radius: 10px;
+    width: 60%;
+    padding: 1rem;
+}
+
+.button {
+    padding: 1rem 3rem;
+    margin-left: 2rem;
+    border: 2px #f79235 solid;
+    border-radius: 10px;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    font-family: 'Ysabeau SC', sans-serif;
+    font-size: 1rem;
+}
+
+.task {
+    font-family: 'Ysabeau SC', sans-serif;
+    font-size: 1.2rem;
+    max-width: 40rem;
+    margin-right: 2rem;
+    background-color: transparent;
+}
+
+h2 {
+    padding-left: 2rem;
+    color: #6f5575;
+    font-size: 1.6rem;
+    margin-top: 0;
+    margin-bottom: 0;
+}
+
+.emptyTask {
+    text-align: center;
+    margin: 4rem 0;
+}
+
+.inputs {
+    display: flex;
+}
+
+.clear {
+    display: flex;
+    justify-content: center;
+}
+
+.tasks {
+    margin-left: 2rem;
+    font-size: 1.2rem;
+    color: #6f5575;
+}
+
+.displaynone {
+    display: none;
+}
+
+.taskline {
+    margin-right: 2rem;
+    padding: 0.5rem 1rem;
+    border: 0.5px solid #f79235;
+    border-radius: 30px;
+    margin-bottom: 0.7rem;
+    position: relative;
+}
+
+li {
+    list-style: none;
+    cursor: pointer;
+}
+
+.cross {
+    position: absolute;
+    right: 1.2rem;
+    top: -0.8rem;
+    font-size: 2rem;
+    color: #6f5575;
+    line-height: 4rem;
+    text-align: center;
+}
+
+.input_style {
+    margin-right: 1rem;
+}
+
+.taskline::before {
+    content: '';
+    position: absolute;
+    height: 1.8rem;
+    width: 1.8rem;
+    border-radius: 50%;
+    background-image: url(assets/images/empty.png);
+    background-size: cover;
+    background-position: center;
+    top: 0.4rem;
+    left: 0.9rem;
+}
+
+.taskline.checked {
+    color: #d47a0560;
+    text-decoration: line-through;
+}
+
+.taskline.checked::before {
+    background-image: url(assets/images/yes.png);
+}
